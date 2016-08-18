@@ -5,14 +5,12 @@ import config
 
 projectPath = '../app'
 
-gradleVersion = '2.1.3'
-
 def startDDMS():
 	command = os.environ['ANDROID_TOOLS'] + 'ddms'
 	os.system(command)
 
 def createProject():
-	command = os.environ['ANDROID_TOOLS'] + 'android create project --target android-' + config.TARGET_API + ' --name ' + config.APP_NAME + ' --path ' + projectPath + ' --activity Splash --package ' + config.APP_PACKAGE + ' --gradle --gradle-version ' + gradleVersion
+	command = os.environ['ANDROID_TOOLS'] + 'android create project --target android-' + config.TARGET_API + ' --name ' + config.APP_NAME + ' --path ' + projectPath + ' --activity Splash --package ' + config.APP_PACKAGE + ' --gradle --gradle-version ' + config.gradleVersion
 	os.system(command)
 
 def installAPK():
